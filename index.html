@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CozyQuest</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>CozyQuest</h1>
+  <h2>Select Your Avatar</h2>
+
+  <!-- AVATAR SELECTION GRID -->
+  <div class="avatar-grid">
+    <!-- Girls -->
+    <img src="assets/girls/girl1.png" onclick="selectAvatar('girls/girl1.png')" />
+    <img src="assets/girls/girl2.png" onclick="selectAvatar('girls/girl2.png')" />
+    <img src="assets/girls/girl3.png" onclick="selectAvatar('girls/girl3.png')" />
+
+    <!-- Boys -->
+    <img src="assets/boys/boy1.png" onclick="selectAvatar('boys/boy1.png')" />
+    <img src="assets/boys/boy2.png" onclick="selectAvatar('boys/boy2.png')" />
+    <img src="assets/boys/boy3.png" onclick="selectAvatar('boys/boy3.png')" />
+  </div>
+
+  <!-- LIVE AVATAR -->
+  <img
+    id="avatar"
+    class="avatar idle"
+    src="assets/girls/girl1.png"
+    alt="Selected avatar"
+  />
+
+  <p id="message"></p>
+
+  <script src="js/character.js"></script>
+</body>
+</html>
+

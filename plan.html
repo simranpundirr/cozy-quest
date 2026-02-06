@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CozyQuest – Plan Your Day</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Plan Your Day</h1>
+
+  <!-- AVATAR -->
+  <img id="avatar" class="avatar idle" />
+
+  <!-- ADD TASK -->
+  <div class="planner">
+  <input id="taskInput" placeholder="Enter a task..." />
+
+  <select id="taskType">
+    <option value="study">Study</option>
+    <option value="work">Work</option>
+    <option value="fun">Fun</option>
+    <option value="health">Health</option>
+  </select>
+
+  <button onclick="addTask()">Add</button>
+</div>
+
+
+  <!-- TASK LIST -->
+  <div id="taskBubbleArea"></div>
+
+
+
+  <button class="start-btn" onclick="startDay()">Start Day</button>
+
+  <script src="js/plan.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CozyQuest – Game Day</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <h1>Today’s Run</h1>
+
+  <!-- PLAYER AVATAR -->
+  <img
+    id="avatar"
+    class="avatar idle mood-1"
+    alt="Player Avatar"
+  />
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="level">
+      Level <span id="level">1</span>
+    </div>
+
+    <div class="xp-bar">
+      <div class="xp-fill" id="xpFill"></div>
+    </div>
+  </div>
+
+  <!-- TASK BUBBLES -->
+  <div class="quests">
+    <div id="taskBubbleArea"></div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
