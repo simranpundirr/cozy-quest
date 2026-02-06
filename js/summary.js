@@ -1,26 +1,30 @@
 window.onload = () => {
+  const tasksEl = document.getElementById("tasksDone");
+  const levelEl = document.getElementById("finalLevel");
+  const xpEl = document.getElementById("totalXP");
   const avatar = document.getElementById("avatar");
-  const savedAvatar = localStorage.getItem("avatar");
 
-  if (savedAvatar) {
-    avatar.src = "assets/" + savedAvatar;
+  if (!tasksEl || !levelEl || !xpEl) {
+    console.error("Summary elements missing from HTML");
+    return;
   }
 
   const tasksDone = Number(localStorage.getItem("tasksDone")) || 0;
   const finalXP = Number(localStorage.getItem("finalXP")) || 0;
   const finalLevel = Number(localStorage.getItem("finalLevel")) || 1;
+  const savedAvatar = localStorage.getItem("avatar");
 
-  document.getElementById("tasksDone").textContent =
-    `Tasks Completed: ${tasksDone}`;
+  if (savedAvatar && avatar) {
+    avatar.src = "assets/" + savedAvatar;
+  }
 
-  document.getElementById("finalLevel").textContent =
-    `Final Level: ${finalLevel}`;
-
-  document.getElementById("totalXP").textContent =
-    `Total XP Earned: ${finalXP}`;
+  tasksEl.textContent = `Tasks Completed: ${tasksDone}`;
+  levelEl.textContent = `Final Level: ${finalLevel}`;
+  xpEl.textContent = `Total XP Earned: ${finalXP}`;
 
   updateLeaderboard(finalXP);
 };
+
 
 function updateLeaderboard(finalXP) {
   let board = JSON.parse(localStorage.getItem("leaderboard")) || [];
