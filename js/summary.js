@@ -24,7 +24,34 @@ function updateLeaderboard() {
     xp: Number(localStorage.getItem("finalXP"))
   };
 
-  board.push(score);
+  function updateLeaderboard() {
+    let board = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+    // Remove old "You" entry if exists
+    board = board.filter(entry => entry.name !== "You");
+
+    const score = {
+      name: "You",
+      xp: Number(localStorage.getItem("finalXP"))
+    };
+
+    board.push(score);
+
+    board.sort((a, b) => b.xp - a.xp);
+    board = board.slice(0, 5);
+
+    localStorage.setItem("leaderboard", JSON.stringify(board));
+
+    const ul = document.getElementById("leaderboard");
+    ul.innerHTML = "";
+
+    board.forEach((entry, i) => {
+      const li = document.createElement("li");
+      li.textContent = `${i + 1}. ${entry.name} — ${entry.xp} XP`;
+      ul.appendChild(li);
+    });
+  }
+
   board.sort((a, b) => b.xp - a.xp);
   board = board.slice(0, 5);
 
