@@ -404,4 +404,11 @@ input {
   background: linear-gradient(90deg, #fb923c, #fed7aa);
   color: black;
 }
+.results-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 20px;
+}
+
 
